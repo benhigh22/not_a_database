@@ -39,14 +39,18 @@ class DBReader:
 
     def add_to_file(self):
         with open("database", "a") as infile:
-            infile.write(input("Enter a username, password, full name, age, and weight. "))
+            infile.write(input("Enter a username: ").lower())
+            infile.write("," + input("Enter a password: ").lower())
+            infile.write("," + input("Enter the user's full name: ").lower())
+            infile.write("," + input("Enter the user's age: ").lower())
+            infile.write("," + input("Enter the user's weight: ").lower())
+        return("Awesome, you added a new user!")
 
     def input_direction(self):
         while True:
-            next_input = input("Would you like to add a username? Enter y to add or n to logout. ")
+            next_input = input("Would you like to add a new user? Enter y to add or n to logout. ")
             if next_input == "y":
                 print(self.add_to_file())
-                print("Awesome, you added a username!")
                 continue
             elif next_input == "n":
                 return "You are now logged out. "
