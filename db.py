@@ -38,12 +38,12 @@ class DBReader:
 
 
     def add_to_file(self):
-        with open("database", "a") as infile:
-            infile.write(input("Enter a username: ").lower())
-            infile.write("," + input("Enter a password: ").lower())
-            infile.write("," + input("Enter the user's full name: ").lower())
-            infile.write("," + input("Enter the user's age: ").lower())
-            infile.write("," + input("Enter the user's weight: ").lower())
+        with open("database", "a") as outfile:
+            outfile.write("\n" + input("Enter a username: ").lower())
+            outfile.write("," + input("Enter a password: ").lower())
+            outfile.write("," + input("Enter the user's full name: ").lower())
+            outfile.write("," + input("Enter the user's age: ").lower())
+            outfile.write("," + input("Enter the user's weight: ").lower())
         return("Awesome, you added a new user!")
 
     def input_direction(self):
@@ -57,5 +57,4 @@ class DBReader:
             else:
                 print("That's not a valid option. ")
                 continue
-
 
